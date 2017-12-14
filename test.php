@@ -20,7 +20,7 @@ while (!feof($fp)) {
 }
 
 
-$fp = fopen('1.txt', 'r');
+$fp = fopen('example.txt', 'r');
 while (!feof($fp)) {
     $line = fgets($fp);
     $line = trim($line);
