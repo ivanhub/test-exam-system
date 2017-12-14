@@ -1,2 +1,2 @@
-# Test-exam system / Скрипт проведения тестов
+# Test-exam system / Система проведения тестов
 # Example: example.txt - input file.
