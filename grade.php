@@ -1,5 +1,6 @@
 <?php
 session_start();
+$debug = 1;
 
 if ($_SESSION['result']) {
     echo "Правильных ответов: " . $_SESSION['right'];
@@ -17,18 +18,19 @@ if ((!$_SESSION['result'])) {
             $c = $_SESSION['count'];
            
     //print_r($_SESSION['count']);
-    echo "Подсчет по предыдущему билету: <br/>";
     $cmp = (int) $obj->biletnum->{$c - 1}{'otvet'};
     $ans = (int) $_POST['answer'];
     if (($cmp == $ans) && (!empty($cmp)) && (!empty($ans))) $_SESSION['right']++; 
-    echo "realniy otvet bil: ";
+if ($debug) {
+    echo "Подсчет по предыдущему билету / Previous question data: <br/>";
+    echo "Realniy otvet bil / You've answered: ";
     print_r($obj->biletnum->{$c - 1}{'otvet'});
-    echo "<br/>pravilnih: ";
+    echo "<br/>Pravilnih / Right answers (in total): ";
     echo $_SESSION['right'];
-    echo "<br/>vvedenniy otvet bil: ";
+    echo "<br/>Vvedenniy otvet bil / Right answer is: ";
     print_r((int) $_POST['answer']);
     echo "<br/>";
-
+}
 
         }
     }
@@ -46,8 +48,9 @@ if ((!$_SESSION['result'])) {
         if ($key > $max)
             $max = $key;
     }
-    
-    echo "Здесь ответ: ";
+
+//Remove this line    
+    echo "Здесь ответ / Right answer: ";
     print_r($obj->biletnum->{$c}{'otvet'});
     
 ?>
