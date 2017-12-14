@@ -3,7 +3,7 @@
 $i            = 1;
 $start_otvety = 0;
 
-$fp = fopen('1.txt', 'r');
+$fp = fopen('example.txt', 'r');
 while (!feof($fp)) {
     $line = fgets($fp);
     //process line however you like
