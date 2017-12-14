@@ -9,7 +9,7 @@ while (!feof($fp)) {
     //process line however you like
     $line = trim($line);
     
-    if ($line == "ОТВЕТЫ")
+    if (($line == "ОТВЕТЫ") OR ($line == "ANSWERS"))
         $start_otvety = 1;
     if ($start_otvety == 1) {
         
