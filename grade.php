@@ -1,11 +1,13 @@
 <?php
+session_start();
 
 if ($_SESSION['result']) {
     echo "Правильных ответов: " . $_SESSION['right'];
     session_destroy();
 }
 
-if (!$_SESSION['result']) {
+if ((!$_SESSION['result'])) {
+   
     $c = $_SESSION['count'];
     if (!isset($_SESSION['count']))
         $c = $_SESSION['count'] = 1;
@@ -13,15 +15,12 @@ if (!$_SESSION['result']) {
         if ($_POST['Submit'] == "Далее") {
             $_SESSION['count']++;
             $c = $_SESSION['count'];
-        }
-    }
+           
     //print_r($_SESSION['count']);
     echo "Подсчет по предыдущему билету: <br/>";
     $cmp = (int) $obj->biletnum->{$c - 1}{'otvet'};
     $ans = (int) $_POST['answer'];
-    if (($cmp = $ans) && (!empty($cmp)) && (!empty($ans))) {
-        $_SESSION['right']++;
-    }
+    if (($cmp == $ans) && (!empty($cmp)) && (!empty($ans))) $_SESSION['right']++; 
     echo "realniy otvet bil: ";
     print_r($obj->biletnum->{$c - 1}{'otvet'});
     echo "<br/>pravilnih: ";
@@ -29,6 +28,10 @@ if (!$_SESSION['result']) {
     echo "<br/>vvedenniy otvet bil: ";
     print_r((int) $_POST['answer']);
     echo "<br/>";
+
+
+        }
+    }
     
 ?>
 

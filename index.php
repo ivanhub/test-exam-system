@@ -18,7 +18,9 @@ foreach($obj->biletnum as $key=>$value) if($key > $max_q) $max_q = $key;
 
 <?php
 //Output the form
+
 include('grade.php');
+
 ?>
 </body>
 </html>
