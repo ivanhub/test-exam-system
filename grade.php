@@ -23,11 +23,11 @@ if ((!$_SESSION['result'])) {
     if (($cmp == $ans) && (!empty($cmp)) && (!empty($ans))) $_SESSION['right']++; 
 if ($debug) {
     echo "Подсчет по предыдущему билету / Previous question data: <br/>";
-    echo "Realniy otvet bil / You've answered: ";
+    echo "Realniy otvet bil / Right answer is: ";
     print_r($obj->biletnum->{$c - 1}{'otvet'});
     echo "<br/>Pravilnih / Right answers (in total): ";
     echo $_SESSION['right'];
-    echo "<br/>Vvedenniy otvet bil / Right answer is: ";
+    echo "<br/>Vvedenniy otvet bil / You've answered: ";
     print_r((int) $_POST['answer']);
     echo "<br/>";
 }
