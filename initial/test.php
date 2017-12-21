@@ -30,9 +30,9 @@ while (!feof($fp)) {
     
     $ifnum = preg_match('/^\d*[\.]/', $line, $there);
     if (1 === $ifnum) {
-        $obj->biletnum->$i{'vopros'} = $line;
+        $obj->biletnum->$i{'vorpos'} = $line;
         $realnum                     = str_replace(".", "", $whichnum);
-        $obj->biletnum->$i{'vopros'} = $line;
+        $obj->biletnum->$i{'vorpos'} = $line;
         $obj->biletnum->$i{'otvet'}  = $realotvety->biletnum->{$i};
         $i++;
         $j = 1;
